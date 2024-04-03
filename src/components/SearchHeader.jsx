@@ -3,6 +3,7 @@ import Image from "next/image";
 import SearchBox from "./SearchBox";
 import { RiSettings3Line } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
+import SearchHeaderTabs from "./SearchHeaderTabs"
 
 export default function SearchHeader({ children }) {
   return (
@@ -28,6 +29,7 @@ export default function SearchHeader({ children }) {
           Sign in
         </button>
       </div>
+      <SearchHeaderTabs />
     </header>
   );
 }
