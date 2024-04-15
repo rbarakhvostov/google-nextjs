@@ -1,3 +1,4 @@
+import WebSearchData from "@/components/WebSearchData";
 import Link from "next/link";
 
 export default async function WebSearchPage({ searchParams }) {
@@ -7,7 +8,8 @@ export default async function WebSearchPage({ searchParams }) {
     throw new Error('Something went wrong!')
   }
 
-  const { items } = await response.json()
+  const data = await response.json()
+  const { items } = data
 
   if (!items) {
     return (
@@ -27,9 +29,7 @@ export default async function WebSearchPage({ searchParams }) {
 
   return (
     <div>
-      {items?.map((item) => (
-        <h1 key={item.cacheId}>{item.title}</h1>
-      ))}
+      <WebSearchData data={data} />
     </div>
-  );
+  )
 }
