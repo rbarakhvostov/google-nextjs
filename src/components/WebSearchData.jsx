@@ -8,18 +8,18 @@ export default function WebSearchData({ data }) {
         About {data.searchInformation?.formattedTotaldata} data (
         {data.searchInformation?.formattedSearchTime} seconds)
       </p>
-      {data.items?.map((result) => (
-        <div className='mb-8 max-w-xl' key={result.link}>
+      {data.items?.map((item) => (
+        <div className='mb-8 max-w-xl' key={item.link}>
           <div className='group flex flex-col'>
-            <Link href={result.link}>{result.formattedUrl}</Link>
+            <Link href={item.link}>{item.formattedUrl}</Link>
             <Link
-              href={result.link}
+              href={item.link}
               className='group-hover:underline decoration-blue-800 text-xl truncate font-medium text-blue-800'
             >
-              {result.title}
+              {item.title}
             </Link>
           </div>
-          <p className='text-gray-600'>{Parser(result.htmlSnippet)}</p>
+          <p className='text-gray-600'>{Parser(item.htmlSnippet)}</p>
         </div>
       ))}
     </div>
