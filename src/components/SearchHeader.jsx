@@ -5,7 +5,7 @@ import { RiSettings3Line } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
 import SearchHeaderTabs from "./SearchHeaderTabs"
 
-export default function SearchHeader({ children }) {
+export default function SearchHeader() {
   return (
     <header className="sticky top-0 bg-white">
       <div className="flex items-center justify-between w-full p-6">
